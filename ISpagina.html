@@ -52,24 +52,15 @@
         }
         
         .logo {
-    display: flex; /* Habilitar Flexbox */
-    align-items: center; /* Alinear verticalmente la imagen y el texto */
-    text-decoration: none; /* Quitar subrayado del enlace */
-    color: white; /* Color base del texto si no hay span */
-}
-
-        .logo img {
-    height: 150px; /* Tamaño de la imagen del logo */
-    margin-right:0px; /* Espacio entre la imagen y el texto */
-    /* Asegúrate de que tu imagen tenga un fondo transparente si el encabezado es de color */
-}
-
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: white;
+            text-decoration: none;
+        }
+        
         .logo span {
-    font-size: 1.8rem; /* Tamaño de fuente para el texto del logo */
-    font-weight: 700; /* Negrita para el texto del logo */
-    color: white; /* Color del texto "Nomi" */
-}
-
+            color: var(--secondary);
+        }
         
         nav ul {
             display: flex;
@@ -367,10 +358,7 @@
     <header>
         <div class="container">
             <div class="header-content">
-                <a href="#" class="logo">
-    <img src="ns-Photoroom.png" alt="NomiSys Logo">
-    <span>NomiSys</span>
-</a>
+                <a href="#" class="logo">Nomi<span>Sys</span></a>
                 <nav>
                     <ul>
                         <li><a href="#features">Características</a></li>
