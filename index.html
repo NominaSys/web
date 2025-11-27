@@ -4,379 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NomiSys - Sistema de Nómina Integral</title>
-    <style>
-        :root {
-            --primary: #2c3e50;
-            --secondary: #3498db;
-            --accent: #e74c3c;
-            --light: #ecf0f1;
-            --dark: #2c3e50;
-            --success: #2ecc71;
-        }
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-        
-        body {
-            background-color: #f9f9f9;
-            color: #333;
-            line-height: 1.6;
-        }
-        
-        .container {
-            width: 90%;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-        
-        /* Header */
-        header {
-            background-color: var(--primary);
-            color: white;
-            padding: 1rem 0;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-        
-        .header-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        
-        .logo {
-    display: flex; /* Habilitar Flexbox */
-    align-items: center; /* Alinear verticalmente la imagen y el texto */
-    text-decoration: none; /* Quitar subrayado del enlace */
-    color: white; /* Color base del texto si no hay span */
-}
-
-        .logo img {
-    height: 150px; /* Tamaño de la imagen del logo */
-    margin-right:0px; /* Espacio entre la imagen y el texto */
-    /* Asegúrate de que tu imagen tenga un fondo transparente si el encabezado es de color */
-}
-
-        .logo span {
-    font-size: 1.8rem; /* Tamaño de fuente para el texto del logo */
-    font-weight: 700; /* Negrita para el texto del logo */
-    color: white; /* Color del texto "Nomi" */
-}
-
-        
-        nav ul {
-            display: flex;
-            list-style: none;
-        }
-        
-        nav ul li {
-            margin-left: 1.5rem;
-        }
-        
-        nav ul li a {
-            color: white;
-            text-decoration: none;
-            font-weight: 500;
-            transition: color 0.3s;
-        }
-        
-        nav ul li a:hover {
-            color: var(--secondary);
-        }
-        
-        /* Hero Section */
-        .hero {
-            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
-            color: white;
-            padding: 5rem 0;
-            text-align: center;
-        }
-        
-        .hero h1 {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-        }
-        
-        .hero p {
-            font-size: 1.2rem;
-            max-width: 700px;
-            margin: 0 auto 2rem;
-        }
-        
-        .btn {
-            display: inline-block;
-            background-color: var(--accent);
-            color: white;
-            padding: 0.8rem 1.5rem;
-            border-radius: 5px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s;
-            border: none;
-            cursor: pointer;
-        }
-        
-        .btn:hover {
-            background-color: #c0392b;
-            transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-        }
-        
-        .btn-secondary {
-            background-color: transparent;
-            border: 2px solid white;
-            margin-left: 1rem;
-        }
-        
-        .btn-secondary:hover {
-            background-color: white;
-            color: var(--primary);
-        }
-        
-        /* Features Section */
-        .features {
-            padding: 5rem 0;
-            background-color: white;
-        }
-        
-        .section-title {
-            text-align: center;
-            margin-bottom: 3rem;
-        }
-        
-        .section-title h2 {
-            font-size: 2.5rem;
-            color: var(--primary);
-            margin-bottom: 1rem;
-        }
-        
-        .section-title p {
-            color: #666;
-            max-width: 700px;
-            margin: 0 auto;
-        }
-        
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-        
-        .feature-card {
-            background-color: var(--light);
-            border-radius: 8px;
-            padding: 2rem;
-            text-align: center;
-            transition: transform 0.3s;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-        }
-        
-        .feature-card:hover {
-            transform: translateY(-10px);
-        }
-        
-        .feature-icon {
-            font-size: 3rem;
-            color: var(--secondary);
-            margin-bottom: 1rem;
-        }
-        
-        .feature-card h3 {
-            margin-bottom: 1rem;
-            color: var(--primary);
-        }
-        
-        /* Download Section */
-        .download {
-            padding: 5rem 0;
-            background-color: var(--light);
-            text-align: center;
-        }
-        
-        .download-box {
-            background-color: white;
-            border-radius: 10px;
-            padding: 3rem;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        
-        .download-box h2 {
-            color: var(--primary);
-            margin-bottom: 1rem;
-        }
-        
-        .download-box p {
-            margin-bottom: 2rem;
-            color: #666;
-        }
-        
-        .download-features {
-            display: flex;
-            justify-content: space-around;
-            margin: 2rem 0;
-            flex-wrap: wrap;
-        }
-        
-        .download-feature {
-            margin: 1rem;
-        }
-        
-        .download-feature i {
-            font-size: 2rem;
-            color: var(--success);
-            margin-bottom: 0.5rem;
-        }
-        
-        /* Tutorials Section */
-        .tutorials {
-            padding: 5rem 0;
-            background-color: white;
-        }
-        
-        .tutorials-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-        
-        .tutorial-card {
-            background-color: var(--light);
-            border-radius: 8px;
-            padding: 2rem;
-            text-align: center;
-            transition: transform 0.3s;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-            display: flex;
-            flex-direction: column;
-            height: 100%;
-        }
-        
-        .tutorial-card:hover {
-            transform: translateY(-10px);
-        }
-        
-        .tutorial-icon {
-            font-size: 3rem;
-            color: var(--secondary);
-            margin-bottom: 1rem;
-        }
-        
-        .tutorial-card h3 {
-            margin-bottom: 1rem;
-            color: var(--primary);
-        }
-        
-        .tutorial-card p {
-            flex-grow: 1;
-            margin-bottom: 1.5rem;
-        }
-        
-        /* Footer */
-        footer {
-            background-color: var(--primary);
-            color: white;
-            padding: 3rem 0 1rem;
-        }
-        
-        .footer-content {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 2rem;
-            margin-bottom: 2rem;
-        }
-        
-        .footer-column h3 {
-            margin-bottom: 1.5rem;
-            font-size: 1.2rem;
-        }
-        
-        .footer-column ul {
-            list-style: none;
-        }
-        
-        .footer-column ul li {
-            margin-bottom: 0.8rem;
-        }
-        
-        .footer-column ul li a {
-            color: #ddd;
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-        
-        .footer-column ul li a:hover {
-            color: var(--secondary);
-        }
-        
-        .copyright {
-            text-align: center;
-            padding-top: 2rem;
-            border-top: 1px solid rgba(255,255,255,0.1);
-            color: #aaa;
-            font-size: 0.9rem;
-        }
-        
-        /* Responsive */
-        @media (max-width: 768px) {
-            .header-content {
-                flex-direction: column;
-                text-align: center;
-            }
-            
-            nav ul {
-                margin-top: 1rem;
-                justify-content: center;
-            }
-            
-            nav ul li {
-                margin: 0 0.5rem;
-            }
-            
-            .hero h1 {
-                font-size: 2.2rem;
-            }
-            
-            .hero p {
-                font-size: 1rem;
-            }
-            
-            .btn-container {
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-            }
-            
-            .btn-secondary {
-                margin-left: 0;
-                margin-top: 1rem;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <!-- Header -->
     <header>
         <div class="container">
             <div class="header-content">
-                <a href="#" class="logo">
-    <img src="ns-Photoroom.png" alt="NomiSys Logo">
-    <span>NomiSys</span>
-</a>
+                <a href="index.html" class="logo">Nomi<span>Sys</span></a>
                 <nav>
                     <ul>
-                        <li><a href="#features">Características</a></li>
-                        <li><a href="#download">Descargar</a></li>
-                        <li><a href="#tutorials">Tutoriales</a></li>
-                        <li><a href="#contact">Contacto</a></li>
+                        <li><a href="index.html#features">Características</a></li>
+                        <li><a href="index.html#download">Descargar</a></li>
+                        <li><a href="manual-usuario.html">Manual</a></li>
+                        <li><a href="guia-instalacion.html">Guía</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                        <li><a href="actualizaciones.html">Actualizaciones</a></li>
+                        <li><a href="index.html#contact">Contacto</a></li>
                     </ul>
                 </nav>
             </div>
@@ -387,7 +31,7 @@
     <section class="hero">
         <div class="container">
             <h1>Sistema de Nómina Integral</h1>
-            <p>Gestiona la nómina de tu empresa de manera eficiente, automatizada y conforme a la ley. Ahorra tiempo y evita errores con nuestra solución todo en uno.</p>
+            <p>Gestiona la nómina de tu empresa de manera eficiente, automatizada . Ahorra tiempo y evita errores.</p>
             <div class="btn-container">
                 <a href="#download" class="btn">Descargar Ahora</a>
                 <a href="#features" class="btn btn-secondary">Conocer Más</a>
@@ -400,30 +44,33 @@
         <div class="container">
             <div class="section-title">
                 <h2>Características Principales</h2>
-                <p>Descubre todas las funcionalidades que hacen de NomiSys la mejor opción para la gestión de nómina</p>
+                <p>Descubre las funcionalidades que hacen de NomiSys la mejor opción para la gestión de nómina</p>
             </div>
             <div class="features-grid">
                 <div class="feature-card">
                     <div class="feature-icon">💰</div>
                     <h3>Cálculo Automático</h3>
-                    <p>Calcula automáticamente salarios, deducciones, impuestos y prestaciones conforme a la legislación vigente.</p>
+                    <p>Calcula automáticamente salarios, deducciones, impuestos y prestaciones.</p>
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon">📊</div>
                     <h3>Reportes Detallados</h3>
-                    <p>Genera reportes completos de nómina, impuestos y estadísticas laborales con solo unos clics.</p>
+                    <p>Genera reportes completos de nómina y estadísticas laborales.</p>
                 </div>
-              
+                <div class="feature-card">
+                    <div class="feature-icon">🔒</div>
+                    <h3>Seguridad de Datos</h3>
+                    <p>Protección avanzada de información sensible con encriptación y controles de acceso.</p>
+                </div>
                 <div class="feature-card">
                     <div class="feature-icon">⚙️</div>
                     <h3>Configuración Flexible</h3>
-                    <p>Adapta el sistema a las políticas específicas de tu empresa con configuraciones personalizables.</p>
+                    <p>Adapta el sistema a las específicaciones de tu empresa con configuraciones personalizables.</p>
                 </div>
-              
                 <div class="feature-card">
                     <div class="feature-icon">🔄</div>
                     <h3>Integraciones</h3>
-                    <p>Conecta fácilmente con sistemas de contabilidad, recursos humanos y otros software empresariales.</p>
+                    <p>Conecta fácilmente con sistemas de contabilidad, recursos humanos.</p>
                 </div>
             </div>
         </div>
@@ -434,7 +81,7 @@
         <div class="container">
             <div class="download-box">
                 <h2>Descarga NomiSys Hoy Mismo</h2>
-                <p>Comienza a optimizar la gestión de nómina en tu empresa. Versión de prueba gratuita por 30 días.</p>
+                <p>Comienza a optimizar la gestión de nómina en tu empresa.</p>
                 
                 <div class="download-features">
                     <div class="download-feature">
@@ -451,51 +98,44 @@
                     </div>
                 </div>
                 
-                <a href="#" class="btn" id="download-link">Descargar Ahora (v2.1.5 - 85 MB)</a>
+                <!-- CAMBIO IMPORTANTE: Cambiado el id a "download-instalador" -->
+                <a href="#" class="btn" id="download-instalador">Descargar Ahora (v1.0.0 - 50 MB)</a>
                 <p style="margin-top: 1rem; font-size: 0.9rem; color: #888;">También disponible para <a href="#" style="color: var(--secondary);">empresas con múltiples sucursales</a></p>
             </div>
         </div>
     </section>
 
-    <!-- Tutorials Section -->
-    <section class="tutorials" id="tutorials">
+    <!-- Resources Section -->
+    <section class="resources" id="resources">
         <div class="container">
             <div class="section-title">
-                <h2>Tutoriales y Documentación</h2>
-                <p>Accede a guías completas para implementar y utilizar NomiSys en tu empresa</p>
+                <h2>Recursos y Documentación</h2>
+                <p>Todo lo que necesitas para implementar y utilizar NomiSys en tu empresa</p>
             </div>
-            <div class="tutorials-grid">
-                <div class="tutorial-card">
-                    <div class="tutorial-icon">📖</div>
+            <div class="resources-grid">
+                <div class="resource-card">
+                    <div class="resource-icon">📖</div>
                     <h3>Manual de Usuario</h3>
-                    <p>Guía completa sobre el uso de todas las funcionalidades de NomiSys, desde la configuración inicial hasta las operaciones avanzadas.</p>
+                    <p>Guía completa sobre el uso de todas las funcionalidades de NomiSys.</p>
                     <a href="manual-usuario.html" class="btn">Acceder al Manual</a>
                 </div>
-                <div class="tutorial-card">
-                    <div class="tutorial-icon">⬇️</div>
+                <div class="resource-card">
+                    <div class="resource-icon">⬇️</div>
                     <h3>Guía de Instalación</h3>
-                    <p>Instrucciones paso a paso para descargar, instalar y configurar NomiSys en diferentes sistemas operativos.</p>
+                    <p>Instrucciones paso a paso para instalar y configurar NomiSys.</p>
                     <a href="guia-instalacion.html" class="btn">Ver Guía</a>
                 </div>
-                <div class="tutorial-card">
-                    <div class="tutorial-icon">🚀</div>
-                    <h3>Implementación</h3>
-                    <p>Proceso completo para implementar NomiSys en tu empresa, incluyendo migración de datos y capacitación del personal.</p>
-                    <a href="implementacion.html" class="btn">Ver Proceso</a>
-                </div>
-                <div class="tutorial-card">
-            
-                    <div class="tutorial-icon">❓</div>
+                <div class="resource-card">
+                    <div class="resource-icon">❓</div>
                     <h3>Preguntas Frecuentes</h3>
-                    <p>Respuestas a las dudas más comunes sobre el uso, configuración y solución de problemas en NomiSys.</p>
+                    <p>Respuestas a las dudas más comunes sobre NomiSys.</p>
                     <a href="faq.html" class="btn">Consultar FAQ</a>
                 </div>
-                <div class="tutorial-card">
-                    <div class="tutorial-icon">🔄</div>
+                <div class="resource-card">
+                    <div class="resource-icon">🔄</div>
                     <h3>Actualizaciones</h3>
-                    <p>Información sobre las últimas actualizaciones del sistema, nuevas funciones y mejoras implementadas.</p>
+                    <p>Información sobre las últimas versiones y mejoras del sistema.</p>
                     <a href="actualizaciones.html" class="btn">Ver Cambios</a>
-                
                 </div>
             </div>
         </div>
@@ -507,15 +147,15 @@
             <div class="footer-content">
                 <div class="footer-column">
                     <h3>NomiSys</h3>
-                    <p>Soluciones integrales de nómina para empresas de todos los tamaños. Más de 10 años optimizando procesos de recursos humanos.</p>
+                    <p>Soluciones integrales de nómina para empresas.</p>
                 </div>
                 <div class="footer-column">
                     <h3>Enlaces Rápidos</h3>
                     <ul>
                         <li><a href="#features">Características</a></li>
                         <li><a href="#download">Descargas</a></li>
-                        <li><a href="#tutorials">Tutoriales</a></li>
-                        <li><a href="#">Soporte</a></li>
+                        <li><a href="manual-usuario.html">Manual</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
                     </ul>
                 </div>
                 <div class="footer-column">
@@ -523,34 +163,201 @@
                     <ul>
                         <li><a href="manual-usuario.html">Manual de Usuario</a></li>
                         <li><a href="guia-instalacion.html">Guía de Instalación</a></li>
-                        <li><a href="video-tutoriales.html">Video Tutoriales</a></li>
-                        <li><a href="faq.html">FAQ</a></li>
+                        <li><a href="faq.html">Preguntas Frecuentes</a></li>
+                        <li><a href="actualizaciones.html">Actualizaciones</a></li>
                     </ul>
                 </div>
                 <div class="footer-column">
                     <h3>Contacto</h3>
                     <ul>
-                        <li>Email: mirreo@uadec.edu.mx</li>
-                        <li>Teléfono: (871)) 123-4567</li>
-                  
+                        <li>Email: soporte@nomisys.com</li>
+                        <li>Teléfono: (871) 123-4567</li>
+                        <li>Dirección: Av. Universidad 123, Saltillo, Coah.</li>
                     </ul>
                 </div>
             </div>
             <div class="copyright">
-                <p>&copy; 2025 .Todos los derechos reservados.</p>
+                <p>&copy; 2025 NomiSys. Todos los derechos reservados.</p>
             </div>
         </div>
     </footer>
 
     <script>
-        // Simulación de descarga
-        document.getElementById('download-link').addEventListener('click', function(e) {
-            e.preventDefault();
-            alert('¡Gracias por tu interés en NomiSys! En una implementación real, aquí comenzaría la descarga del archivo.\n\nEn este ejemplo demostrativo, estamos simulando la descarga del sistema de nómina.');
+    // Esperar a que el DOM esté completamente cargado
+    document.addEventListener('DOMContentLoaded', function() {
+        // Detección del navegador
+        function getBrowserInfo() {
+            const userAgent = navigator.userAgent;
+            let browserName = "Navegador";
             
-            // En una implementación real, aquí iría el código para iniciar la descarga
-            // window.location.href = 'ruta/al/archivo/descarga.zip';
-        });
+            if (userAgent.includes("Chrome")) browserName = "Chrome";
+            else if (userAgent.includes("Firefox")) browserName = "Firefox";
+            else if (userAgent.includes("Safari")) browserName = "Safari";
+            else if (userAgent.includes("Edge")) browserName = "Edge";
+            
+            return browserName;
+        }
+
+        // Configuración para GitHub Pages
+        const installerConfig = {
+            // Ruta relativa para GitHub Pages
+            url: 'Descarga/SetupNom.exe',
+            fileName: 'NomiSys_Instalador.exe',
+            folder: 'Instaladores',
+            version: 'v1.0.0',
+            size: '50 MB'
+        };
+
+        // Función principal de descarga - CORREGIDO EL ID
+        const downloadBtn = document.getElementById('download-instalador');
+        
+        if (downloadBtn) {
+            downloadBtn.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const browser = getBrowserInfo();
+                showDownloadDialog(installerConfig, browser);
+            });
+        } else {
+            console.error('Botón de descarga no encontrado');
+        }
+
+        function showDownloadDialog(installerInfo, browser) {
+            const messages = {
+                Chrome: `En la barra de descargas, haga clic en "Guardar" y seleccione la carpeta "${installerInfo.folder}"`,
+                Firefox: `En el diálogo de descarga, elija "Guardar archivo" y seleccione la carpeta "${installerInfo.folder}"`,
+                Safari: `La descarga comenzará automáticamente. Por favor, mueva el archivo a la carpeta "${installerInfo.folder}"`,
+                Edge: `Haga clic en "Guardar" y seleccione la carpeta "${installerInfo.folder}"`,
+                Navegador: `Guarde el archivo en la carpeta "${installerInfo.folder}"`
+            };
+
+            const instruction = messages[browser] || messages.Navegador;
+
+            const confirmationMessage = `
+INICIAR DESCARGA DEL INSTALADOR
+
+ Nombre: ${installerInfo.fileName}
+ Versión: ${installerInfo.version}
+Tamaño: ${installerInfo.size}
+Carpeta destino: ${installerInfo.folder}
+
+ INSTRUCCIONES:
+Descargar el archivo y asegurarse de ejecutarlo como administrador,darle permiso para que se ejecute
+
+ Después de descargar:
+• Guarde en la carpeta "${installerInfo.folder}"
+• Ejecute como Administrador
+• Siga los pasos del instalador
+
+¿Desea continuar con la descarga?
+            `;
+
+            if(confirm(confirmationMessage)) {
+                executeDownload(installerInfo);
+            }
+        }
+
+        function executeDownload(installerInfo) {
+            try {
+                // Verificar si el archivo existe (solo para mostrar mensaje de error personalizado)
+                checkFileExists(installerInfo.url).then(exists => {
+                    if (exists) {
+                        // Crear elemento de descarga
+                        const downloadLink = document.createElement('a');
+                        downloadLink.href = installerInfo.url;
+                        downloadLink.download = installerInfo.fileName;
+                        
+                        // Estilos para ocultar el elemento
+                        downloadLink.style.display = 'none';
+                        downloadLink.style.position = 'absolute';
+                        downloadLink.style.left = '-9999px';
+                        
+                        // Agregar al DOM y simular clic
+                        document.body.appendChild(downloadLink);
+                        downloadLink.click();
+                        document.body.removeChild(downloadLink);
+                        
+                        // Mensaje de éxito
+                        showSuccessMessage(installerInfo);
+                    } else {
+                        showFileNotFoundError(installerInfo);
+                    }
+                }).catch(() => {
+                    // Si falla la verificación, intentar descarga de todos modos
+                    forceDownload(installerInfo);
+                });
+                
+            } catch (error) {
+                console.error('Error en descarga:', error);
+                showErrorMessage();
+            }
+        }
+
+        function forceDownload(installerInfo) {
+            // Método alternativo si falla la verificación
+            const downloadLink = document.createElement('a');
+            downloadLink.href = installerInfo.url;
+            downloadLink.download = installerInfo.fileName;
+            downloadLink.target = '_blank';
+            document.body.appendChild(downloadLink);
+            downloadLink.click();
+            document.body.removeChild(downloadLink);
+            
+            showSuccessMessage(installerInfo);
+        }
+
+        function checkFileExists(url) {
+            return fetch(url, { method: 'HEAD' })
+                .then(response => response.ok)
+                .catch(() => false);
+        }
+
+        function showSuccessMessage(installerInfo) {
+            const successMessage = `
+DESCARGA INICIADA CORRECTAMENTE
+
+ Por favor asegúrese de:
+1. Descargar el instalador
+2.Tener java (8 p superior) 
+3. Ejecute como Administrador
+
+ Si la descarga no inicia automáticamente:
+• Verifique su conexión a internet
+• Haga clic derecho en el enlace y "Guardar enlace como..."
+• Contacte al administrador si persiste el problema
+            `;
+            
+            setTimeout(() => {
+                alert(successMessage);
+            }, 500);
+        }
+
+        function showFileNotFoundError(installerInfo) {
+            const errorMessage = `
+ARCHIVO NO ENCONTRADO
+
+El instalador no está disponible en este momento.
+
+Detalles:
+• Archivo: ${installerInfo.url}
+• Ruta: ${installerInfo.folder}
+
+ Por favor contacte al administrador del sistema para obtener el instalador.
+            `;
+            
+            alert(errorMessage);
+        }
+
+        function showErrorMessage() {
+            alert(' Error al iniciar la descarga.\n\nPor favor:\n1. Verifique su conexión a internet\n2. Intente nuevamente\n3. Contacte al administrador si persiste el problema');
+        }
+
+        // Actualizar la información de versión en el botón
+        const versionInfo = document.querySelector('#download-instalador');
+        if (versionInfo) {
+            versionInfo.textContent = `Descargar Ahora (${installerConfig.version} - ${installerConfig.size})`;
+        }
+    });
     </script>
 </body>
 </html>
